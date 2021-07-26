@@ -1,6 +1,7 @@
 # mini_project
 
 A new Flutter project.
+A app with login and register with razor pay for donation
 
 ## Getting Started
 
