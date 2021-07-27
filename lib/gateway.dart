@@ -84,13 +84,23 @@ class _MyHomePageState extends State<MyHomePage> {
       
         title: Text("GATEWAY"),
       ),
-      body: Center(
+      body: Container(
+        height: 550,
+	              decoration: BoxDecoration(
+	                image: DecorationImage(
+	                  image: AssetImage('assets/background5.png'),
+	                  fit: BoxFit.fill
+	                ),
+        /* add child content here */
+      ),
       
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               'Enter the amount to donate',
+              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20
+              ,fontStyle:FontStyle.italic)
             ),
             LimitedBox(
               maxWidth: 150.0,
@@ -98,6 +108,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   hintText: 'Enter Amount',
+                   hintStyle: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          color: Colors.white,
+                          fontSize: 18,
+
+                        ),
                 ),
                 onChanged: (val) {
                   setState(() {
