@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'gateway.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Register extends StatelessWidget {
  
@@ -12,7 +13,19 @@ class Register extends StatelessWidget {
         
         
       ),
-       body: ListView(children: <Widget>[
+        body: Container(
+        height: 600,
+	              decoration: BoxDecoration(
+	                image: DecorationImage(
+	                  image: AssetImage('assets/background5.png'),
+	                  fit: BoxFit.fill
+	                ),
+        /* add child content here */
+      ),
+        
+        
+        
+        child: ListView(children:<Widget>[
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +42,7 @@ class Register extends StatelessWidget {
     borderRadius: BorderRadius.circular(15),
     border: Border.all(color: Colors.blueAccent)
   ),
-  child: Text("REGISTER",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+  child: Text("REGISTER",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),),
 ),
 Row(
               children: [
@@ -41,13 +54,14 @@ Row(
                         hintText: "  FULL NAME ",
                         labelText: "  ENTER YOUR NAME",
                         labelStyle: TextStyle(
-                          
-                          color: Colors.black,
+                          fontSize: 18,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                         hintStyle: TextStyle(
                           fontStyle: FontStyle.italic,
-                          color: Colors.black,
+                          color: Colors.white,
+                          fontSize: 18,
 
                         ),
                       ),
@@ -72,12 +86,14 @@ Row(
                         labelText: "  ENTER YOUR EMAIL ID",
                         labelStyle: TextStyle(
                           
-                          color: Colors.black,
+                          color: Colors.white,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                         hintStyle: TextStyle(
                           fontStyle: FontStyle.italic,
-                          color: Colors.black,
+                          color: Colors.white,
+                          fontSize: 18,
 
                         ),
                       ),
@@ -101,12 +117,14 @@ Row(
                         labelText: "  ENTER YOUR PASSWORD",
                         labelStyle: TextStyle(
                           
-                          color: Colors.black,
+                          color: Colors.white,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                         hintStyle: TextStyle(
                           fontStyle: FontStyle.italic,
-                          color: Colors.black,
+                          color: Colors.white,
+                          fontSize: 18,
 
                         ),
                       ),
@@ -142,6 +160,15 @@ SizedBox(
                 ElevatedButton(
             child: Text("DONATION"),
             onPressed: () {
+               Fluttertoast.showToast(
+                        msg: "REDIRECTING TO DONATION GATEWAY",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.blue,
+                        textColor: Colors.white,
+                        fontSize: 16.0
+                    );
                Navigator.push(context,
                         MaterialPageRoute(builder: (context)=>MyHomePage() ),
                     );
@@ -165,7 +192,7 @@ SizedBox(
         ),
       ],),
 
-
+        ),
     );
   }
 }

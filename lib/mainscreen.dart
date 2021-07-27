@@ -20,7 +20,7 @@ class mainscreen extends StatelessWidget {
 
       appBar: AppBar(
         
-        title: Text("Main Screen",style:TextStyle(fontStyle: FontStyle.italic,fontWeight:FontWeight.bold),),
+        title: Text("WELCOME",style:TextStyle(fontStyle: FontStyle.italic,fontWeight:FontWeight.bold),),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.account_circle),onPressed: (){
              Navigator.push(context,
@@ -43,6 +43,15 @@ class mainscreen extends StatelessWidget {
               title: Text("8106223686",style: TextStyle(fontWeight: FontWeight.bold),),
               trailing: Icon(Icons.arrow_right),
               onTap:(){
+                 Fluttertoast.showToast(
+                        msg: "OPENING ACCOUNT DETAILS...",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.blue,
+                        textColor: Colors.white,
+                        fontSize: 16.0
+                    );
                  Navigator.push(context,
                         MaterialPageRoute(builder: (context)=>secondscreen() ),
                     );
@@ -53,6 +62,17 @@ class mainscreen extends StatelessWidget {
             ListTile(
               title: Text("ORDER HISTORY"),
               leading:Icon(Icons.menu),
+              onTap: (){
+                 Fluttertoast.showToast(
+                        msg: "REDIRECTING TO ORDER HISTORY...",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.blue,
+                        textColor: Colors.white,
+                        fontSize: 16.0
+                    );
+              },
               
             ),
             Divider(thickness: 2,color: Colors.blue,),
@@ -81,6 +101,17 @@ class mainscreen extends StatelessWidget {
             ListTile(
               title: Text("UPDATE"),
               leading:Icon(Icons.update),
+              onTap:(){
+                 Fluttertoast.showToast(
+                        msg: "UPDATING...",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.blue,
+                        textColor: Colors.white,
+                        fontSize: 16.0
+                    );
+              } ,
             ),
             Divider(thickness: 2,color: Colors.blue,),
             ListTile(
@@ -92,11 +123,17 @@ class mainscreen extends StatelessWidget {
   // set up the buttons
   Widget cancelButton = TextButton(
     child: Text("No"),
-    onPressed:  () {},
+    onPressed:  () {
+      Navigator.pop(context);
+    },
   );
   Widget continueButton = TextButton(
     child: Text("Yes,Logout"),
-    onPressed:  () {},
+    onPressed:  () {
+       Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=>mainscreen() ),
+                    );
+    },
   );
 
   // set up the AlertDialog
